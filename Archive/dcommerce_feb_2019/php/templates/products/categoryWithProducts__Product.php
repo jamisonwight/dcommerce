@@ -1,15 +1,17 @@
-<div class="cell medium-6 large-4 product-block" data-equalizer-watch>
-    <div class="ecp-list-item grid-x" data-ecp-id="{message:product_id}" data-equalizer-watch>
-        <h2><a href="{message:__productdetail_link}" data-ecp-action="load-product" data-ecp-key="{message:slug}">{message:product_name}</a></h2>
+<div class="cell medium-6 large-4 product-block">
+    <div class="ecp-list-item" data-ecp-id="{message:product_id}">
         <a title="product-link" href="{message:__productdetail_link}" data-ecp-action="load-product" data-ecp-key="{message:slug}"><img class="product-image-small" src="{message:thumbnail}"></a>
-        <div class="ecp-html-subtitle" data-ecp-handle="feature_text" data-equalizer-watch>{message:feature_text}</div>
-        
-        <div class="cell ecp-section product-block-addtocart" data-ecp-handle="available" data-equalizer-watch>
-            <span data-ecp-handle="not_discounted" data-equalizer-watch>
-                <div class="ecp-price"><strong>Price:</strong> {currency:price}</div>
+        <h2><a href="{message:__productdetail_link}" data-ecp-action="load-product" data-ecp-key="{message:slug}">{message:product_name}</a></h2>
+        <div class="ecp-html-subtitle" data-ecp-handle="feature_text">{message:feature_text}</div>
+        <div class="ecp-columns ecp-clearfix">
+            
+        </div>
+        <div class="cell ecp-section product-block-addtocart" data-ecp-handle="available">
+            <span data-ecp-handle="not_discounted">
+                <div class="ecp-price">{currency:price}</div>
             </span>
-            <form class="grid-x ecp-form" data-equalizer-watch>
-                <div class="cell small-4 medium-5 large-2 large-offset-1">
+            <form class="grid-x grid-margin-x ecp-form">
+                <div class="cell small-4 medium-5 large-4">
                     <select name="product_qty">
                         <!-- | CategoryWithProducts_Option template | -->
                     </select>

@@ -58,8 +58,6 @@ function dcommerce_header_scripts()
 
      <!--//* Load Foundation only on the store pages -->
      <?php if ($foundation_grid == 'all') : ?>
-        <!--//* Foundation JS -->
-        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==" crossorigin="anonymous"></script>
         <!--//* Foundation Grid -->
         <link rel="stylesheet" type="text/css" href="<?php echo plugins_url('css/foundation-grid.css', __FILE__) ?>"/>
     <?php else: ?>
@@ -77,8 +75,6 @@ function dcommerce_header_scripts()
 
         <!--//* Load Foundation only on the store pages -->
         <?php if ($foundation_grid == 'store') : ?>
-            <!--//* Foundation JS -->
-            <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==" crossorigin="anonymous"></script>
             <!--//* Foundation Grid -->
             <link rel="stylesheet" type="text/css" href="<?php echo plugins_url('css/foundation-grid.css', __FILE__) ?>"/>
         <?php else: ?>
@@ -256,9 +252,6 @@ function dcommerce_header_scripts()
                     },
                     "EditBillingAddress": {
                         "url": "<?php echo plugins_url('templates/account/EditBillingAddress.php', __FILE__) ?>"
-                    },
-                    "CreateBillingAddress": {
-                        "url": "<?php echo plugins_url('templates/account/CreateBillingAddress.php', __FILE__) ?>"
                     },
                     "EditShippingAddress": {
                         "url": "<?php echo plugins_url('templates/account/EditShippingAddress.php', __FILE__) ?>"

@@ -6,8 +6,7 @@
     display: inline-block;
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 5px;
 }
 /* Main dcommerce menu */
 .dcomm-menu-wrapper {
@@ -38,7 +37,7 @@
 }
 
 .dcomm-arrow-up {
-    transform: translateY(-50%) rotate(180deg) !important;
+    transform: rotate(180deg) !important;
 }
 
 .dcomm-menu-filter-wrapper .dcomm-menu-single .dcomm-toggle-menu {
@@ -71,21 +70,6 @@
     transform: translateX(-50%);
 }
 
-
-/* category products */
-.ecp_CategoryWithProducts .ecp-price {
-    text-align: center;
-    margin-top: 5px;
-    padding: 5px;
-    display: block;
-}
-/* .ecp_CategoryWithProducts .ecp-html-subtitle {
-    padding-bottom: 20px;
-}
-.custom-category-with-products .ecp-list-item {
-    height: 530px;
-} */
-
 /* Image styles */
 .product-image-small {
     width: 120px !important;
@@ -102,7 +86,6 @@
     transform: translateX(-50%);
 }
 
-
 /* Cart */
 .ecp_GeneralCartEmpty {
     text-align: center;
@@ -115,53 +98,24 @@
 }
 .product-block .ecp-list-item {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
 } 
-/* .product-block-addtocart {
+.product-block-addtocart {
     position: absolute;
     bottom: 0;
-} */
+}
 .ecp_CategoryWithProducts div.ecp-html-subtitle {
-    text-align: center;
+    padding-bottom: 4rem;
 }
 [data-ecp-handle="add_more_to_cart"] {
-    position: relative; 
+    position: relative;
     width: 100%;
 }
 .ecp_CategoryWithProducts .ecp-form-tip {
     display: inline-block !important;
     position: absolute;
-    bottom: -45px;
+    bottom: 40px;
     width: 100%
 }
 .ecp_CategoryWithProducts .ecp-form button {
-    width: 100% !important;
-}
-.ecp-note,
-.ecp-note p,
-.ecp-note div {
-    text-align: center !important;
-}
-
-
-/* Product Detail */
-.ecp_ProductDetail h3 {
-    text-align: center;
-}
-
-@media screen and (max-width: 1023px) {
-    .dcomm-store-main .ecp_ProductDetail .ecp-html-subtitle,
-    .dcomm-store-main .ecp_ProductDetail .ecp-price,
-    .dcomm-store-main .ecp_ProductDetail .ecp-html-content {
-        text-align: center !important;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .dcomm-store-main .ecp_ProductDetail h1 {
-        text-align: left !important;
-    }
+    width: 85% !important;
 }

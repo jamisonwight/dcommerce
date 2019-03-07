@@ -4,10 +4,9 @@ function dcommerce_shortcode_main($atts)
 {
     $a = shortcode_atts(array(
         'class' => 'dcomm-store-main',
-        'id' => 'dcomm-store-main'
     ), $atts);
     ?>
-        <div data-ecp-wrapper="true" id="<?php echo $a['id']; ?>" class="<?php echo $a['class']; ?> grid-container"></div>
+        <div data-ecp-wrapper="true" class="<?php echo $a['class']; ?> grid-container"></div>
     <?php
 }
 add_shortcode('dcomm-main', 'dcommerce_shortcode_main');
@@ -83,13 +82,12 @@ function dcommerce_shortcode_menu($atts)
 {
     $a = shortcode_atts(array(
         'class' => 'dcomm-menu-wrapper',
-        'id' => 'dcomm-filter',
     ), $atts);
     ?>
-        <div id="<?php echo $a['id']; ?>" class="<?php echo $a['class']; ?> grid-container dcomm-filter">
+        <div class="<?php echo $a['class']; ?> grid-container">
             <div class="grid-x grid-margin-x dcomm-menu">
                 <div class="cell medium-12 large-8 large-offset-2">
-                    <div class="grid-x grid-margin-x grid-margin-y">
+                    <div class="grid-x grid-margin-x">
                         <div class="cell medium-4 dcomm-menu-single dcomm-menu-misc">
                             <h4>View by Category</h4>
                             <?php echo get_option('category_menu_main'); ?>
@@ -122,15 +120,14 @@ function dcommerce_shortcode_menu_filter($atts)
 
     $a = shortcode_atts(array(
         'class' => 'dcomm-menu-filter-wrapper',
-        'id' => 'dcomm-filter',
     ), $atts);
 
     if ($_GET['view'] === 'products' | $_GET['view'] === 'product') :
     ?>
-        <div id="<?php echo $a['id']; ?>" class="<?php echo $a['class']; ?> grid-container dcomm-filter">
+        <div class="<?php echo $a['class']; ?> grid-container">
             <div class="grid-x grid-margin-x grid-padding-x dcomm-menu">
-                <div class="cell medium-12 large-10 large-offset-1">
-                    <div class="grid-x grid-margin-x grid-margin-y grid-padding-y">
+                <div class="cell medium-12 large-8 large-offset-2">
+                    <div class="grid-x grid-margin-x">
 
                         <?php if ($cat_main !== '' && $cat_varietal !== '' && $cat_collection !== ''): ?>
                             <div class="cell medium-3"><h4>Filter By:</h4></div>
@@ -190,10 +187,9 @@ function dcommerce_shortcode_menu_varietal($atts)
 {
     $a = shortcode_atts(array(
         'class' => 'dcomm-menu-varietal',
-        'id' => 'dcomm-filter'
     ), $atts);
     ?>
-            <div id="<?php echo $a['id']; ?>" class="<?php echo $a['class']; ?> dcomm-filter">
+            <div class="<?php echo $a['class']; ?>">
                 <?php echo get_option('category_menu_varietal'); ?>
             </div>
     <?php
@@ -207,10 +203,9 @@ function dcommerce_shortcode_menu_collection($atts)
 {
     $a = shortcode_atts(array(
         'class' => 'dcomm-menu-collection',
-        'id' => 'dcomm-filter',
     ), $atts);
     ?>
-        <div id="<?php echo $a['id']; ?>" class="<?php echo $a['class']; ?> dcomm-filter">
+        <div class="<?php echo $a['class']; ?>">
             <?php echo get_option('category_menu_collection'); ?>
         </div>
     <?php
@@ -224,10 +219,9 @@ function dcommerce_shortcode_menu_main($atts)
 {
     $a = shortcode_atts(array(
         'class' => 'dcomm-menu-main',
-        'id' => 'dcomm-filter',
     ), $atts);
     ?>
-        <div class="<?php echo $a['class']; ?> dcomm-filter">
+        <div class="<?php echo $a['class']; ?>">
             <?php echo get_option('category_menu_main'); ?>
         </div>
 <?php
