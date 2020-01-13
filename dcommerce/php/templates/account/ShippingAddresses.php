@@ -1,5 +1,5 @@
 <div class="grid-x account account_ShippingAddresses">
-    <div class="cell ecp-component ecp_ShippingAddresses">
+    <div class="cell medium-8 medium-offset-2 ecp-component ecp_ShippingAddresses">
         <h1>{message:ShippingAddresses/Title}</h1>
         <form class="ecp-form">
             <button class="ecp-continue" data-ecp-action="add">

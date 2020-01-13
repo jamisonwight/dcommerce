@@ -1,8 +1,8 @@
-<div class="grid-x account account_ChangePassword">
+<div class="grid-x grid-padding-y account account_ChangePassword">
     <div class="cell medium-8 medium-offset-2 ecp-component ecp_ChangePassword">
         <h1>{message:ChangePassword/Title}</h1>
         <p class="ecp-summary">{message:ChangePassword/Summary}</p>
-        <form class="ecp-form">
+        <form class="ecp-form grid-x grid-margin-y">
             <div class="cell">
                 <input type="text" name="username" placeholder="{message:ChangePassword/EmailInput}">
             </div>

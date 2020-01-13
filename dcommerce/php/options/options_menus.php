@@ -1,5 +1,5 @@
 <section class="dcomm-menu-options cell medium-8 medium-offset-2">
-    <h1><span class="fa fa-sort-desc" aria-hidden="true"></span> Menus</h1>
+    <h1><span class="fas fa-list" aria-hidden="true"></span> Menus</h1>
     <div class="cell">
         <div class="grid-x grid-margin-y">
             <p class="cell">These are optional category menu's that can placed by the menu shortcodes. Any menu's that are left empty will not be displayed.</p>

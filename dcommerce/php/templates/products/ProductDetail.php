@@ -15,7 +15,7 @@
                         <p class="ecp-price"><i><strong>Price:</strong></i>&nbsp;  {currency:price}</p>
                     </span>
                     <div class="ecp-section" data-ecp-handle="available">
-                        <form class="ecp-form grid-x grid-margin-x">
+                        <form class="ecp-form grid-x">
                             <span class="cell small-3 medium-3">
                                     <select name="product_qty">
                                         <!-- | ProductDetail_Option template | -->

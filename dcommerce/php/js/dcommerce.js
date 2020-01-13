@@ -61,4 +61,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
     });
+
+
+    // Editor Submission
+    var dcommerceForm = document.querySelector('.toplevel_page_dcommerce form'),
+        testButton = document.getElementById('button'),
+        customMessagesEditor = ace.edit("customMessagesEditor"),
+        customCSSEditor = ace.edit("customCSSEditor");
+
+    // Custom Messages Editor
+    customMessagesEditor.setTheme("ace/theme/tomorrow_night_eighties");
+    customMessagesEditor.session.setMode("ace/mode/javascript");
+
+    // Custom CSS Editor
+    customCSSEditor.setTheme("ace/theme/tomorrow_night_eighties");
+    customCSSEditor.session.setMode("ace/mode/css");
+
+    dcommerceForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Custom Messages
+        var customMessagesData = {action: 'update_custom_messages', customMessages: customMessagesEditor.getValue().replace(/[/]+/g, '')}
+        jQuery.post(ajaxurl, customMessagesData, function(response) {
+        });
+        
+        // CSS Stlyes
+        var customCSSData = {action: 'update_custom_css', customCSS: customCSSEditor.getValue()}
+        jQuery.post(ajaxurl, customCSSData, function(response) {
+        });
+    })
 });

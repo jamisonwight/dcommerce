@@ -1,5 +1,5 @@
 <section class="dcomm-templates cell medium-8 medium-offset-2">
-    <h1><span class="fa fa-file-code-o" aria-hidden="true"></span> Templates</h1>
+    <h1><span class="far fa-file-code" aria-hidden="true"></span> Templates</h1>
     <div class="cell">
         <div class="cell">
             <div class="grid-x grid-margin-y grid-margin-x dcomm-templates-container">

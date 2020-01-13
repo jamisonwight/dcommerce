@@ -50,9 +50,66 @@ function dcommerce_header_scripts()
     endforeach;
     ?>
 
-    <!--*********************** 
-        Load on all pages 
-    ***************************-->
+    <!--************************ 
+       Custom Body Text Classes
+    ****************************-->
+<?php
+    $isClasses = false;
+    $classes = array(
+        'heading_1' => array(
+            'name' => 'heading-1',
+            'class' => get_option('dcomm_heading_1')
+        ),
+        'heading_2' => array(
+            'name' => 'heading-2',
+            'class' => get_option('dcomm_heading_2')
+        ),
+        'heading_3' => array(
+            'name' => 'heading-3',
+            'class' => get_option('dcomm_heading_3')
+        ),
+        'heading_4' => array(
+            'name' => 'heading-4',
+            'class' => get_option('dcomm_heading_4')
+        ),
+        'heading_5' => array(
+            'name' => 'heading-5',
+            'class' => get_option('dcomm_heading_5')
+        ),
+        'paragraph' => array(
+            'name' => 'paragraph',
+            'class' => get_option('dcomm_paragraph')
+        ),
+        'ecpContent' => array(
+            'name' => 'ecpcontent',
+            'class' => get_option('dcomm_ecpcontent')
+        ),
+        'button' => array(
+            'name' => 'button',
+            'class' => get_option('dcomm_button')
+        ),
+    );
+
+    foreach ($classes as $key => $val) {
+        if (!empty($val)) {
+            $isClasses = true;
+        }
+    }
+
+    if ($isClasses) {
+        echo '<script src="'.plugins_url('js/dcomm-classes.js', __FILE__).'" id="dcomm-classes"';
+
+        // Data Attributes
+        foreach ($classes as $key => $val) {
+            if (!empty($val)) {
+                echo ' data-'.$val['name'].'="'.$val['class'].'"';
+            }
+        } 
+
+        echo '></script>';
+    }
+?>
+
     <!--//* FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -66,11 +123,13 @@ function dcommerce_header_scripts()
         <!--//* Do nothing  -->   
     <?php endif; ?>
     
-
-    <!--*********************** 
-        Load on Store pages 
-    ***************************-->
     <?php if (is_page($storeUrl)) : ?>
+         <!--*********************** 
+            Load on Store pages 
+        ***************************-->
+        <!-- CUSTOM CSS -->
+        <style><?php echo get_option('dcomm_custom_css'); ?></style>
+
         <?php if ($default_css != 0) : ?>
             <link rel="stylesheet" type="text/css" href="https://cdn.ecellar-rw.com/1/css/ecp-theme.css" lazyload />
         <?php endif; ?>
@@ -85,7 +144,6 @@ function dcommerce_header_scripts()
              <!--//* Do nothing  -->
         <?php endif; ?>
     <?php endif; ?>
-
 
     <script>
     // **************
@@ -104,6 +162,9 @@ function dcommerce_header_scripts()
         <?php else : ?>
         disableCache: true,
         <?php endif; ?>
+
+        // Google Analytics
+        stats: {fbq: true, gtm: true}, pathRoot: '/store/',
 
         // Path Root
         pathRoot: '<?php echo $pathRoot; ?>',
@@ -131,6 +192,9 @@ function dcommerce_header_scripts()
             <?php endforeach; ?>
         },
         <?php endif; ?>
+        addMessages: [
+            <?php echo stripslashes(get_option('dcomm_custom_messages')); ?>
+		],
         // Templates
         addTemplates: [ 
             { 
@@ -203,6 +267,9 @@ function dcommerce_header_scripts()
                     "Logout": {
                         "url": "<?php echo plugins_url('templates/login/Logout.php', __FILE__) ?>"
                     },
+                    "ResetPassword": {
+                        "url": "<?php echo plugins_url('templates/login/ResetPassword.php', __FILE__) ?>"
+                    },
                 }
             },
             <?php endif; ?>
@@ -217,6 +284,24 @@ function dcommerce_header_scripts()
                     },
                     "CreateCustomerThankYou": {
                         "url": "<?php echo plugins_url('templates/signup/CreateCustomerThankYou.php', __FILE__) ?>"
+                    },
+                    "JoinClub": {
+                        "url": "<?php echo plugins_url('templates/signup/JoinClub.php', __FILE__) ?>"
+                    },
+                    "JoinClubCreateBillingAddress": {
+                        "url": "<?php echo plugins_url('templates/signup/JoinClubCreateBillingAddress.php', __FILE__) ?>"
+                    },
+                    "JoinClubCreateCustomer": {
+                        "url": "<?php echo plugins_url('templates/signup/JoinClubCreateCustomer.php', __FILE__) ?>"
+                    },
+                    "JoinClubReview": {
+                        "url": "<?php echo plugins_url('templates/signup/JoinClubReview.php', __FILE__) ?>"
+                    },
+                    "JoinClubSelectTier": {
+                        "url": "<?php echo plugins_url('templates/signup/JoinClubSelectTier.php', __FILE__) ?>"
+                    },
+                    "JoinList": {
+                        "url": "<?php echo plugins_url('templates/signup/JoinList.php', __FILE__) ?>"
                     },
                 }
             },
@@ -239,10 +324,28 @@ function dcommerce_header_scripts()
                     "EditBillingAddress": {
                         "url": "<?php echo plugins_url('templates/checkout/EditBillingAddress.php', __FILE__) ?>"
                     },
+                    "SelectPickupLocation": {
+                        "url": "<?php echo plugins_url('templates/checkout/SelectPickupLocation.php', __FILE__) ?>"
+                    },
+                    "CreatePaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/checkout/CreatePaymentMethod.php', __FILE__) ?>"
+                    },
+                    "EditShippingAddress": {
+                        "url": "<?php echo plugins_url('templates/checkout/EditShippingAddress.php', __FILE__) ?>"
+                    },
+                    "OrderReview": {
+                        "url": "<?php echo plugins_url('templates/checkout/OrderReview.php', __FILE__) ?>"
+                    },
+                    "ReplacePaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/checkout/ReplacePaymentMethod.php', __FILE__) ?>"
+                    },
+                    "SelectPickupLocation": {
+                        "url": "<?php echo plugins_url('templates/checkout/SelectPickupLocation.php', __FILE__) ?>"
+                    },
                 }
             },
             <?php endif; ?>
-            // Dashboard
+            // Account
             <?php if ($templates['account']['name'] == 'account' && $templates['account']['name'] != 0): ?>
                 <?php echo $templates['dashboard']['content'] ?>
             <?php elseif (isset($defaultTemplates)): ?>
@@ -269,12 +372,57 @@ function dcommerce_header_scripts()
                     "ChangePassword": {
                         "url": "<?php echo plugins_url('templates/account/ChangePassword.php', __FILE__) ?>"
                     },
+                    "CreatePaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/account/CreatePaymentMethod.php', __FILE__) ?>"
+                    },
+                    "CreateShippingAddress": {
+                        "url": "<?php echo plugins_url('templates/account/CreateShippingAddress.php', __FILE__) ?>"
+                    },
+                    "ClubSubscriptions": {
+                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions.php', __FILE__) ?>"
+                    },
+                    "ClubSubscriptions__Subscription__Pickup": {
+                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions__Subscription__Pickup.php', __FILE__) ?>"
+                    },
+                    "ClubSubscriptions__Subscription__Shipment": {
+                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions__Subscription__Shipment.php', __FILE__) ?>"
+                    },
+                    "ClubSubscriptions__Tier": {
+                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions__Tier.php', __FILE__) ?>"
+                    },
+                    "EditClubSubscription": {
+                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription.php', __FILE__) ?>"
+                    },
+                    "EditClubSubscription__Address": {
+                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription__Address.php', __FILE__) ?>"
+                    },
+                    "EditClubSubscription__PaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription__PaymentMethod.php', __FILE__) ?>"
+                    },
+                    "OrderDetail": {
+                        "url": "<?php echo plugins_url('templates/account/OrderDetail.php', __FILE__) ?>"
+                    },
+                    "Orders": {
+                        "url": "<?php echo plugins_url('templates/account/Orders.php', __FILE__) ?>"
+                    },
+                    "PaymentMethods": {
+                        "url": "<?php echo plugins_url('templates/account/PaymentMethods.php', __FILE__) ?>"
+                    },
+                    "PaymentMethods__PaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/account/PaymentMethods__PaymentMethod.php', __FILE__) ?>"
+                    },
+                    "ReplacePaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/account/ReplacePaymentMethod.php', __FILE__) ?>"
+                    },
+                    "Reservations": {
+                        "url": "<?php echo plugins_url('templates/account/Reservations.php', __FILE__) ?>"
+                    },
                 }
             },
             <?php endif; ?>
 
             }		
-        ]
+        ],
     }
     </script>
     <?php

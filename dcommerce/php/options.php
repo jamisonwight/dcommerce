@@ -21,8 +21,23 @@ function register_dcommerce_settings()
     register_setting('dcommerce_settings_group', 'category_menu_varietal');
     register_setting('dcommerce_settings_group', 'category_menu_collection');
     register_setting('dcommerce_settings_group', 'category_menu_main');
+    register_setting('dcommerce_settings_group', 'dcomm_custom_messages');
+    register_setting('dcommerce_settings_group', 'dcomm_custom_css');
     register_setting('dcommerce_settings_group', 'dcomm_grid');
     register_setting('dcommerce_settings_group', 'dcomm_default_templates');
+
+    // CSS Settings
+    register_setting('dcommerce_settings_group', 'dcomm_heading_1');
+    register_setting('dcommerce_settings_group', 'dcomm_heading_2');
+    register_setting('dcommerce_settings_group', 'dcomm_heading_3');
+    register_setting('dcommerce_settings_group', 'dcomm_heading_4');
+    register_setting('dcommerce_settings_group', 'dcomm_heading_5');
+    register_setting('dcommerce_settings_group', 'dcomm_paragraph');
+    register_setting('dcommerce_settings_group', 'dcomm_ecpcontent');
+    register_setting('dcommerce_settings_group', 'dcomm_button');
+    register_setting('dcommerce_settings_group', 'dcomm_filter_background');
+    register_setting('dcommerce_settings_group', 'dcomm_filter_padding');
+    register_setting('dcommerce_settings_group', 'dcomm_filter_grid');
 
     // Register view Alias settings
     register_setting('dcommerce_settings_group', 'dcomm_alias_account_name');
@@ -90,6 +105,11 @@ function register_dcommerce_settings()
         update_option('category_menu_main', $_POST['category_menu_main']);
     }
 
+    // Set Custom Messages
+    if (isset($_POST['dcomm_custom_messages'])) {
+        update_option('dcomm_custom_messages', $_POST['dcomm_custom_messages']);
+    }
+
     // Set Templates 
     if (isset($_POST['dcomm_template_account'])) {
         update_option('dcomm_template_account', $_POST['dcomm_template_account']);
@@ -137,6 +157,12 @@ function dcommerce_options()
 
             <!-- Preferences -->
             <?php include plugin_dir_path( __FILE__ ).'options/options_preferences.php'; ?>
+
+            <!-- Custom Messages -->
+            <?php include plugin_dir_path( __FILE__ ).'options/options_custom_messages.php'; ?>
+
+            <!-- CSS Styling -->
+            <?php include plugin_dir_path( __FILE__ ).'options/options_css.php'; ?>
 
             <!-- Templates -->
             <?php include plugin_dir_path( __FILE__ ).'options/options_templates.php'; ?>

@@ -10,6 +10,9 @@
 // Options
 include 'php/options.php';
 
+// Functions
+include 'php/functions.php';
+
 // Admin Scripts
 include 'php/admin_scripts.php';
 

@@ -160,3 +160,31 @@
     display: inline-block;
     padding-right: .2rem;
 }
+
+/* CSS Options */
+.dcomm-options-css h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.dcomm-options-css .css-section {
+    margin-bottom: 2rem;
+}
+
+.dcomm-options-css .grid-options input {
+    margin-left: 20px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+
+/* Code Editor */
+#customMessagesEditor {
+    width: 100%;
+    height: 950px;
+}
+
+#customCSSEditor {
+    width: 100%;
+    height: 950px;
+}

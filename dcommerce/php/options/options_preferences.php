@@ -1,5 +1,5 @@
 <section class="dcomm-options cell medium-8 medium-offset-2">
-    <h1><span class="fa fa-sliders" aria-hidden="true"></span> Preferences</h1>
+    <h1><span class="fas fa-sliders-h" aria-hidden="true"></span> Preferences</h1>
     <div class="cell">
         <div class="cell">
             <div class="grid-x grid-margin-x grid-margin-y">

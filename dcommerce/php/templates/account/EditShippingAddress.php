@@ -1,5 +1,5 @@
 <div class="grid-x account account_ShippingAddress">
-    <div class="cell ecp-component ecp_EditShippingAddress">
+    <div class="cell medium-8 medium-offset-2 ecp-component ecp_EditShippingAddress">
         <h1>{message:EditShippingAddress/Title}</h1>
         <div data-ecp-handle="invalid_state">
             <div class="ecp-callout-box">{message:EditShippingAddress/InvalidState_template}</div>
@@ -30,9 +30,6 @@
                     <!-- | Address__StateOption template | -->
                 </select>
             </div>
-            <!-- <div class="cell medium-4">
-                 <input type="text" name="region" placeholder="{message:EditShippingAddress/RegionInput}">
-            </div> -->
             <div class="cell large-4">
                 <input type="text" name="postal_code" placeholder="{message:EditShippingAddress/PostalCodeInput}">
             </div>
@@ -46,6 +43,9 @@
                  <select name="country_code" data-ecp-action="change-country">
                     <!-- | Address__CountryOption template | -->
                 </select>
+            </div>
+            <div class="cell medium-4">
+                 <input type="text" name="region" placeholder="{message:EditShippingAddress/RegionInput}">
             </div>
 
             <p class="cell ecp-summary">{message:EditShippingAddress/PhoneAndBirthDateInfo}</p>

@@ -1,7 +1,7 @@
 <div class="grid-x account account_EditBillingAddress">
     <div class="cell medium-8 medium-offset-2 ecp-component ecp_EditBillingAddress">
         <h1>{message:EditBillingAddress/Title}</h1>
-        <form class="grid-x grid-margin-y grid-margin-x ecp-form">
+        <form class="grid-x grid-margin-x grid-margin-y ecp-form">
             <div class="cell large-4">
                 <input type="text" name="first_name" placeholder="{message:EditBillingAddress/FirstNameInput}">
             </div>
@@ -26,9 +26,6 @@
                     <!-- | Address__StateOption template | -->
                 </select>
             </div>
-            <!-- <div class="cell medium-4">
-                <input type="text" name="region" placeholder="{message:EditBillingAddress/RegionInput}">
-            </div> -->
             <div class="cell large-4">
                  <input type="text" name="postal_code" placeholder="{message:EditBillingAddress/PostalCodeInput}">
             </div>
@@ -40,6 +37,9 @@
                     <!-- | Address__CountryOption template | -->
                 </select>
             </div>
+            <div class="cell medium-4">
+                <input type="text" name="region" placeholder="{message:EditBillingAddress/RegionInput}">
+            </div> 
 
             <p class="cell ecp-summary">{message:EditBillingAddress/PhoneAndBirthDateInfo}</p>
             <div class="cell">

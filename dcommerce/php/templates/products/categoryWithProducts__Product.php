@@ -9,12 +9,12 @@
                 <div class="ecp-price"><strong>Price:</strong> {currency:price}</div>
             </span>
             <form class="grid-x ecp-form" data-equalizer-watch>
-                <div class="cell small-4 medium-5 large-2 large-offset-1">
+                <div class="cell small-4 medium-5 xlarge-3">
                     <select name="product_qty">
                         <!-- | CategoryWithProducts_Option template | -->
                     </select>
                 </div>
-                <div class="cell small-8 medium-7 large-8">
+                <div class="cell small-8 medium-7 xlarge-9">
                     <button data-ecp-action="add-to-cart" data-ecp-handle="add_to_cart">{message:CategoryWithProducts/AddToCartButton}</button>
                     <div data-ecp-handle="add_more_to_cart">
                         <button data-ecp-action="add-to-cart">{message:CategoryWithProducts/AddMoreToCartButton}</button>

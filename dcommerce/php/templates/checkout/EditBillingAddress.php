@@ -5,7 +5,7 @@
             <!-- | Checkout__ProgressBar template | -->
         </div>
         <p class="ecp-summary">{message:EditBillingAddress/Summary}</p>
-        <form class="grid-x grid-margin-x grid-margin-y ecp-form">
+        <form class="grid-x grid-margin-x grid-padding-y ecp-form">
             <div class="cell large-4">
                 <input type="text" name="first_name" placeholder="{message:EditBillingAddress/FirstNameInput}">
             </div>
@@ -30,9 +30,6 @@
                     <!-- | Address__StateOption template | -->
                 </select>
             </div>
-            <!-- <div class="cell medium-4">
-                 <input type="text" name="region" placeholder="{message:EditBillingAddress/RegionInput}">
-            </div> -->
             <div class="cell large-4">
                  <input type="text" name="postal_code" placeholder="{message:EditBillingAddress/PostalCodeInput}">
             </div>
@@ -43,6 +40,9 @@
                <select name="country_code" data-ecp-action="change-country">
                     <!-- | Address__CountryOption template | -->
                 </select>
+            </div>
+            <div class="cell medium-4">
+                 <input type="text" name="region" placeholder="{message:EditBillingAddress/RegionInput}">
             </div>
     
             <p class="cell ecp-summary">{message:EditBillingAddress/PhoneAndBirthDateInfo}</p>

@@ -15,10 +15,7 @@ jQuery(document).ready(function ($) {
         });
     });
 
-});
-
-
-    // Check for changes to the main store wrapper
+     // Check for changes to the main store wrapper
     //  Remove or show menus based on views
     // Select the node that will be observed for mutations
     var dcommMain = document.getElementById('dcomm-store-main');
@@ -37,17 +34,15 @@ jQuery(document).ready(function ($) {
                 // Check for view changes
                 if (dcommFilter !== '' && urlParams.get('view') == 'product' || urlParams.get('view') == 'products') {
                     dcommFilter.style.display = 'block';
-                    console.log('hi this is a product');
                 } else if (dcommFilter !== null && urlParams.get('view') == 'cart' || urlParams.get('view') == 'account' || urlParams.get('view') == 'checkout' || urlParams.get('view') == 'sigin') {
                     dcommFilter.style.display = 'none';
-                    console.log('not a product page');
                 } else {
                     // Do nothing
                 }
             }
-            // else if (mutation.type == 'attributes') {
-            //     console.log('The ' + mutation.attributeName + ' attribute was modified.');
-            // }
+            else if (mutation.type == 'attributes') {
+    
+            }
         }
     };
 
@@ -59,3 +54,8 @@ jQuery(document).ready(function ($) {
 
     // Later, you can stop observing
     // observer.disconnect();
+
+});
+
+
+   

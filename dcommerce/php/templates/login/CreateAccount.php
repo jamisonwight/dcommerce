@@ -1,6 +1,6 @@
 <div class="grid-x login login-create">
     <div class="ecp-component ecp_CreateAccount cell medium-8 medium-offset-2">
-        <h2>{message:CreateAccount/Title}</h2>
+        <h1>{message:CreateAccount/Title}</h1>
         <p class="ecp-summary">{message:CreateAccount/EmailAddress_template}</p>
         <form class="ecp-form grid-x grid-margin-y grid-margin-x">
             <div class="cell medium-6">
