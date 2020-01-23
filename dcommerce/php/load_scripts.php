@@ -375,29 +375,11 @@ function dcommerce_header_scripts()
                     "CreatePaymentMethod": {
                         "url": "<?php echo plugins_url('templates/account/CreatePaymentMethod.php', __FILE__) ?>"
                     },
-                    "CreateShippingAddress": {
-                        "url": "<?php echo plugins_url('templates/account/CreateShippingAddress.php', __FILE__) ?>"
-                    },
-                    "ClubSubscriptions": {
-                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions.php', __FILE__) ?>"
-                    },
                     "ClubSubscriptions__Subscription__Pickup": {
                         "url": "<?php echo plugins_url('templates/account/ClubSubscriptions__Subscription__Pickup.php', __FILE__) ?>"
                     },
                     "ClubSubscriptions__Subscription__Shipment": {
                         "url": "<?php echo plugins_url('templates/account/ClubSubscriptions__Subscription__Shipment.php', __FILE__) ?>"
-                    },
-                    "ClubSubscriptions__Tier": {
-                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions__Tier.php', __FILE__) ?>"
-                    },
-                    "EditClubSubscription": {
-                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription.php', __FILE__) ?>"
-                    },
-                    "EditClubSubscription__Address": {
-                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription__Address.php', __FILE__) ?>"
-                    },
-                    "EditClubSubscription__PaymentMethod": {
-                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription__PaymentMethod.php', __FILE__) ?>"
                     },
                     "OrderDetail": {
                         "url": "<?php echo plugins_url('templates/account/OrderDetail.php', __FILE__) ?>"
@@ -416,6 +398,36 @@ function dcommerce_header_scripts()
                     },
                     "Reservations": {
                         "url": "<?php echo plugins_url('templates/account/Reservations.php', __FILE__) ?>"
+                    },
+                    "ClubSubscriptionThankYou": {
+                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptionThankYou.php', __FILE__) ?>"
+                    },
+                    "CreateClubSubscription__Address": {
+                        "url": "<?php echo plugins_url('templates/account/CreateClubSubscription__Address.php', __FILE__) ?>"
+                    },
+                    "CreateClubSubscription__PaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/account/CreateClubSubscription__PaymentMethod.php', __FILE__) ?>"
+                    },
+                    "ClubSubscriptions": {
+                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions.php', __FILE__) ?>"
+                    },
+                    "ClubSubscriptions__Tier": {
+                        "url": "<?php echo plugins_url('templates/account/ClubSubscriptions__Tier.php', __FILE__) ?>"
+                    },
+                    "CreateShippingAddress": {
+                        "url": "<?php echo plugins_url('templates/account/CreateShippingAddress.php', __FILE__) ?>"
+                    },
+                    "CreateClubSubscription": {
+                        "url": "<?php echo plugins_url('templates/account/CreateClubSubscription.php', __FILE__) ?>"
+                    },
+                    "EditClubSubscription__Address": {
+                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription__Address.php', __FILE__) ?>"
+                    },
+                    "EditClubSubscription__PaymentMethod": {
+                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription__PaymentMethod.php', __FILE__) ?>"
+                    },
+                    "EditClubSubscription": {
+                        "url": "<?php echo plugins_url('templates/account/EditClubSubscription.php', __FILE__) ?>"
                     },
                 }
             },
