@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     // Custom Templates
-    var templatSelectOption = document.querySelectorAll('#templateSelect option'),
+    var templatSelect = document.querySelectorAll('#templateSelect'),
         templateContainer = document.querySelectorAll('.dcomm-template-container .dcomm-template-single'),
         templateSelectBase = document.getElementById('dcomm-template-base'),
         templateSelectCampaign = document.getElementById('dcomm-template-campaign'),
@@ -23,44 +23,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
         templateSelectNotification = document.getElementById('dcomm-template-notification');
     
 
-    templatSelectOption.forEach(function(opt) {
-        opt.addEventListener('click', function(e) {
-            e.preventDefault();
+
+        templateSelect.addEventListener('change', function(e) {
+            var $val = e.target.value;
 
             // Hide all open template options
             templateContainer.forEach(function(template) {
                 template.style.display = 'none';
             });
 
-            if (opt.value === 'account') {
+            if ($val === 'account') {
                 templateSelectAccount.style.display = 'flex';
             }
-            if (opt.value === 'base') {
+            if ($val === 'base') {
                 templateSelectBase.style.display = 'flex';
             }
-            if (opt.value === 'campaign') {
+            if ($val === 'campaign') {
                 templateSelectCampaign.style.display = 'flex';
             }
-            if (opt.value === 'cart') {
+            if ($val === 'cart') {
                 templateSelectCart.style.display = 'flex';
             }
-            if (opt.value === 'checkout') {
+            if ($val === 'checkout') {
                 templateSelectCheckout.style.display = 'flex';
             }
-            if (opt.value === 'login') {
+            if ($val === 'login') {
                 templateSelectLogin.style.display = 'flex';
             }
-            if (opt.value === 'products') {
+            if ($val === 'products') {
                 templateSelectProducts.style.display = 'flex';
             }
-            if (opt.value === 'signup') {
+            if ($val === 'signup') {
                 templateSelectSignup.style.display = 'flex';
             }
-            if (opt.value === 'notification') {
+            if ($val === 'notification') {
                 templateSelectNotification.style.display = 'flex';
             }
         });
-    });
+
 
 
     // Editor Submission
@@ -80,14 +80,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     dcommerceForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Custom Messages
-        var customMessagesData = {action: 'update_custom_messages', customMessages: customMessagesEditor.getValue().replace(/[/]+/g, '')}
-        jQuery.post(ajaxurl, customMessagesData, function(response) {
-        });
-        
-        // CSS Stlyes
-        var customCSSData = {action: 'update_custom_css', customCSS: customCSSEditor.getValue()}
-        jQuery.post(ajaxurl, customCSSData, function(response) {
-        });
+        new Promise(function(resolve, reject) {
+             // Custom Messages
+            var customMessagesData = {action: 'update_custom_messages', customMessages: customMessagesEditor.getValue().replace(/[/]+/g, '')}
+            jQuery.post(ajaxurl, customMessagesData, function(response) {
+            });
+            
+            // CSS Stlyes
+            var customCSSData = {action: 'update_custom_css', customCSS: customCSSEditor.getValue()}
+            jQuery.post(ajaxurl, customCSSData, function(response) {
+            });
+
+            setTimeout(function() {
+                resolve();
+            }, 500)
+        })
+        .then(function() {
+            location.reload();
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
     })
 });

@@ -3,11 +3,13 @@
 	  <h1>{message:Dashboard/Title}</h1>
 	  <p><strong>{message:Dashboard/Greeting} {message:first_name} {message:last_name}</strong></p>
 	  <p class="ecp-summary">{message:Dashboard/Summary}</p>
+	
 	  <div class="ecp-callout-box" data-ecp-handle="allocation_message">{message:Dashboard/AllocationMessage}</div>
 	  <div class="ecp-callout-box" data-ecp-handle="remix_message">{message:Dashboard/RemixMessage}</div>
 	  <div class="ecp-callout-box" data-ecp-handle="reservation_message">{message:Dashboard/ReservationMessage}</div>
+	  
 	  <ul class="ecp-item-list">
-	    <li data-ecp-handle="allocation_link"><a href="#" data-ecp-action="load-allocation">{message:Dashboard/AllocationLink}</a></li>
+	    <li data-ecp-handle="allocation_link"><a href="{message:__allocation_link}" data-ecp-action="load-allocation">{message:Dashboard/AllocationLink}</a></li>
 	    <li data-ecp-handle="remix_link"><a href="#" data-ecp-action="load-remixes">{message:Dashboard/RemixLink}</a></li>
 	    <li data-ecp-handle="reservations_link"><a href="#" data-ecp-action="load-reservations">{message:Dashboard/ReservationsLink}</a></li>
 	    <li data-ecp-handle="subscriptions_link"><a href="#" data-ecp-action="load-subscriptions">{message:Dashboard/ClubSubscriptionsLink}</a></li>

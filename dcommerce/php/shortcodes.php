@@ -25,18 +25,18 @@ function dcommerce_shortcode_cart_presence($atts)
 <ul class="<?php echo $a['class']; ?>" id="<?php echo $a['class']; ?>">
     <?php if ($_GET['view'] == 'products' | $_GET['view'] == 'product') : ?>
     <li><a href="<?php echo bloginfo('url') . get_option('dcomm_url_path_root'); ?>?view=account">Account</a></li>
-    <li>|</li>
+    <li class="list-divider">|</li>
     <li>
         <div data-ecp-presence></div>
     </li>
-    <li>|</li>
+    <li class="list-divider">|</li>
     <li>
         <div data-ecp-minicart></div>
     </li>
     <?php else : ?>
     <li><a href="<?php echo bloginfo('url') . get_option('dcomm_url_path_root'); ?>?view=account">Account</a></li>
-    <li>|</li>
-    <li><a href="<?php echo bloginfo('url') . get_option('dcomm_url_path_root'); ?>?view=cart"><span class="fas fa-shopping-cart"></span> Cart</a></li>
+    <li class="list-divider">|</li>
+    <li><a href="<?php echo bloginfo('url') . get_option('dcomm_url_path_root'); ?>?view=cart">Cart</a></li>
     <?php endif; ?>
 </ul>
 <?php elseif ($a['type'] == 'list') : ?>
@@ -260,3 +260,17 @@ function dcommerce_shortcode_menu_main($atts)
 
 }
 add_shortcode('dcomm-menu-main', 'dcommerce_shortcode_menu_main');
+
+
+// Sidekick
+function dcommerce_shortcode_sidekick($atts)
+{
+    $a = shortcode_atts(array(
+        'class' => 'dcomm-sidekick',
+        'id' => 'dcomm-sidekick',
+    ), $atts);
+    ?>
+<div class="<?php echo $a['class']; ?>" id="<?php echo $a['id']; ?>" data-ecp-sidekick></div>
+<?php
+}
+add_shortcode('dcomm-sidekick', 'dcommerce_shortcode_sidekick');

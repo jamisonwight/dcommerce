@@ -1,7 +1,7 @@
 <div class="grid-x signup">
     <div class="cell medium-8 medium-offset-2 ecp-component ecp_CreateCustomer">
         <h1>{message:CreateCustomer/Title}</h1>
-        <p class="ecp-summary">{message:CreateCustomer/Summary}</p>
+        <p class="ecp-summary">{message:CreateCustomer/Summary}:</p>
         <form class="ecp-form">
             <h3>{message:CreateCustomer/PersonalInfoTitle}</h3>
             <div class="grid-x grid-margin-x grid-padding-y ecp-form-fieldset-scrunched">

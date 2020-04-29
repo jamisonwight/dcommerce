@@ -62,23 +62,12 @@
                         <li><label><input type="checkbox" name="is_default">{message:CreateShippingAddress/MakeDefaultYesNo}</label></li>
                     </ul>
                 </div>
-                <div class="cell">
-                    <div class="grid-x grid-margin-x">
-                        <div class="cell" data-ecp-handle="one_button">
-                            <button data-ecp-action="save">{message:CreateShippingAddress/SaveButton}</button>
-                        </div>
-                        <div class="cell" data-ecp-handle="two_buttons">
-                            <div class="grid-x grid-margin-x">
-                                <div class="cell medium-6">
-                                    <button class="ecp-secondary" data-ecp-action="cancel">{message:CreateShippingAddress/CancelButton}</button>
-                                </div>
-                                <div class="cell medium-6">
-                                    <button data-ecp-action="save">{message:CreateShippingAddress/SaveButton}</button>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+                <div class="cell" data-ecp-handle="one_button">
+                    <button data-ecp-action="save">{message:CreateShippingAddress/SaveButton}</button>
+                </div>
+                <div class="cell ecp-form-buttonset-2 ecp-clearfix" data-ecp-handle="two_buttons">
+                    <button class="ecp-secondary" data-ecp-action="cancel">{message:CreateShippingAddress/CancelButton}</button>
+                    <button data-ecp-action="save">{message:CreateShippingAddress/SaveButton}</button>
                 </div>
             </div>
         </form>

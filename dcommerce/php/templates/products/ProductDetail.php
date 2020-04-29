@@ -1,11 +1,11 @@
 <div class="grid-x grid-padding-y product-detail">
-    <div class="cell ecp-component ecp_ProductDetail">
+    <div class="cell ecp-component ecp_ProductDetail {message:css_class}">
         <div data-ecp-id="{message:product_id}">
             <div class="grid-x ecp-clearfix">
                 <div class="cell large-4">
                     <img class="product-image product-image-large" src="{message:image_1}">
                 </div>
-                <div class="cell large-6 large-offset-1">
+                <div class="cell large-6">
                     <h1>{message:product_name}</h1>
                     <div class="ecp-html-subtitle" data-ecp-handle="feature_text">{message:feature_text}</div>
                     <span data-ecp-handle="discounted">
@@ -15,7 +15,7 @@
                         <p class="ecp-price"><i><strong>Price:</strong></i>&nbsp;  {currency:price}</p>
                     </span>
                     <div class="ecp-section" data-ecp-handle="available">
-                        <form class="ecp-form grid-x">
+                        <form class="ecp-form grid-x grid-margin-x">
                             <span class="cell small-3 medium-3">
                                     <select name="product_qty">
                                         <!-- | ProductDetail_Option template | -->
@@ -44,11 +44,11 @@
                     </div>
                     <div class="ecp-html-content" data-ecp-handle="description">{message:description}</div>
                     <div class="grid-x">
-                        <div class="ecp-section cell" data-ecp-handle="​technical_notes">
+                        <div class="ecp-section cell winemaker-notes" data-ecp-handle="​technical_notes">
                             <h3>{message:ProductDetail/TechnicalNotesTitle}</h3>
                             <div class="ecp-html-content ecp-note">{message:technical_notes}</div>
                         </div>
-                        <div class="ecp-section cell" data-ecp-handle="​secondary_notes">
+                        <div class="ecp-section cell awards" data-ecp-handle="​secondary_notes">
                             <h3>{message:ProductDetail/SecondaryNotesTitle}</h3>
                             <div class="ecp-html-content ecp-note">{message:secondary_notes}</div>
                         </div>

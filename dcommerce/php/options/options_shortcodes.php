@@ -39,6 +39,13 @@
             </td>
         </tr>
 
+        <tr valign="top">
+            <td>
+                <p>[dcomm-sidekick]</p><br>
+                <small>Sidekick pop out on adding a product to the shopping cart.</small>
+            </td>
+        </tr>
+
         <!-- Category Menu -->
         <tr valign="top">
             <td>
